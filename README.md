@@ -55,6 +55,18 @@ Turn On Italic Mode
 
 Turn On Reverse Mode
 
+#### `(blink)`
+
+Turn On Blink Mode
+
+#### `(invisible)`
+
+Turn On Invisible Mode
+
+#### `(strike)`
+
+Turn On Strike-through Mode.
+
 #### `(lit)`
 
 Take in Literal Tokens
@@ -62,11 +74,14 @@ Take in Literal Tokens
 #### `(no, <option>)`
 
 Disable an `<option>` specified.
-    * **<option>**: Can be `bold`
+* **\<option\>**: Can be `bold`
                           |`italic`
                           |`dim`
                           |`reverse`
                           |`underline`
+                          |`blink`
+                          |`strike`
+                          |`invisible`
 
 
 #### `(cl256, <foreground>, <background>)`
@@ -163,9 +178,92 @@ Set Cursor At the Origin
 #### `(jumpxy, <row>, <column>)`
 
 Set Cursor to a specified location
-
 - **\<row\>** [number], Specify row
 - **\<column\>** [number], Specify column
+
+#### `(up, <#>)`
+
+Moves cursor up # lines
+
+#### `(down, <#>)`
+
+Moves cursor down # lines
+
+#### `(left, <#>)`
+
+Moves cursor left # columns
+
+#### `(right, <#>)`
+
+Moves cursor right # columns  
+
+#### `(up0, <#>)`
+
+Moves cursor down # lines. At the beginning
+
+#### `(down0, <#>)`
+
+Moves cursor down # lines. At the beginning 
+
+#### `(column, <#>)`
+
+Moves cursor to column #
+
+#### `(save)`
+
+Save cursor position
+
+#### `(load)`
+
+Restores the cursor to the last saved position
+
+#### `(ssave)`
+
+Save screen
+
+#### `(sload)`
+
+Restore screen
+
+#### `(clr_toend)`
+
+Clears from cursor until end of screen
+
+#### `(clr_tostart)`
+
+Clears from cursor until start of screen
+
+#### `(clrln_toend)`
+
+Clears from cursor until end of line
+
+#### `(clrln_tostart)`
+
+Clears from cursor until start of screen
+
+#### `(mode_on, <value>)` & `(mode_off, <value>)`
+
+Changes the screen width or type to the mode specified by `<value>`.
+
+| **`<value>`**| Description                                    |
+| :---------- | :---------------------------------------------- |
+| `0`         | 40 x 25 monochrome (text)                       |
+| `1`         | 40 x 25 color (text)                            |
+| `2`         | 80 x 25 monochrome (text)                       |
+| `3`         | 80 x 25 color (text)                            |
+| `4`         | 320 x 200 4-color (graphics)                    |
+| `5`         | 320 x 200 monochrome (graphics)                 |
+| `6`         | 640 x 200 monochrome (graphics)                 |
+| `7`         | Enables line wrapping                           |
+| `13`        | 320 x 200 color (graphics)                      |
+| `14`        | 640 x 200 color (16-color graphics)             |
+| `15`        | 640 x 350 monochrome (2-color graphics)         |
+| `16`        | 640 x 350 color (16-color graphics)             |
+| `17`        | 640 x 480 monochrome (2-color graphics)         |
+| `18`        | 640 x 480 color (16-color graphics)             |
+| `19`        | 320 x 200 color (256-color graphics)            |
+
+
 
 ## Example
 
